@@ -1,9 +1,17 @@
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
+const crypto = require('node:crypto');
 
 const root = __dirname;
 const port = Number(process.env.PORT) || 3000;
+const authUser = process.env.MOACH_AUTH_USER;
+const authPassword = process.env.MOACH_AUTH_PASSWORD;
+
+if (!authUser || !authPassword) {
+  console.error('MOACH_AUTH_USER and MOACH_AUTH_PASSWORD are required.');
+  process.exit(1);
+}
 
 const mimeTypes = {
   '.css': 'text/css; charset=utf-8',
@@ -28,7 +36,50 @@ function send(res, status, body, type = 'text/plain; charset=utf-8') {
   res.end(body);
 }
 
+function secureEqual(actual, expected) {
+  const actualBuffer = Buffer.from(actual, 'utf8');
+  const expectedBuffer = Buffer.from(expected, 'utf8');
+  return actualBuffer.length === expectedBuffer.length
+    && crypto.timingSafeEqual(actualBuffer, expectedBuffer);
+}
+
+function isAuthorized(req) {
+  const header = req.headers.authorization;
+  if (!header || !header.startsWith('Basic ')) return false;
+
+  let decoded;
+  try {
+    decoded = Buffer.from(header.slice(6), 'base64').toString('utf8');
+  } catch {
+    return false;
+  }
+
+  const separator = decoded.indexOf(':');
+  if (separator < 0) return false;
+
+  const username = decoded.slice(0, separator);
+  const password = decoded.slice(separator + 1);
+  return secureEqual(username, authUser) && secureEqual(password, authPassword);
+}
+
+function requestAuthorization(res) {
+  const body = 'Authentication required';
+  res.writeHead(401, {
+    'WWW-Authenticate': 'Basic realm="MOACH Preview", charset="UTF-8"',
+    'Cache-Control': 'no-store',
+    'Content-Type': 'text/plain; charset=utf-8',
+    'Content-Length': Buffer.byteLength(body),
+    'X-Content-Type-Options': 'nosniff',
+  });
+  res.end(body);
+}
+
 const server = http.createServer((req, res) => {
+  if (!isAuthorized(req)) {
+    requestAuthorization(res);
+    return;
+  }
+
   let pathname;
   try {
     pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
