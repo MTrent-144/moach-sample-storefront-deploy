@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MOACH — Coaching From The Sideline (Sample Storefront)</title>
+  <meta name="description" content="MOACH is a sample game-day and athleisure storefront for sideline moms and sports parents across every youth sport. Prototype content for approval: products, prices and checkout are not live.">
+  <meta name="theme-color" content="#131D29">
+  <link rel="icon" href="assets/moach-emblem.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- One-color identity symbols. Geometry copied from assets/moach-*.svg; fill inherits currentColor so the marks work in ink, cream or coral. -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="sym-emblem" viewBox="0 0 120 110">
+      <g transform="translate(10 0)" fill="currentColor"><path d="M8 86V14H26L50 43 74 14H92V86H72V47L50 73 28 47V86Z"/><path d="M28 96H72V100H28Z"/></g>
+    </symbol>
+    <symbol id="sym-logo" viewBox="0 0 620 110">
+      <g fill="currentColor"><path d="M8 86V14H26L50 43 74 14H92V86H72V47L50 73 28 47V86Z"/><path d="M28 96H72V100H28Z"/></g>
+      <g fill="currentColor" fill-rule="evenodd" transform="translate(135 8) scale(1.0491071428571428)"><path d="M0,100 L0,0 L20,0 L40,37 L60,0 L80,0 L80,100 L58,100 L58,37 L40,65 L22,37 L22,100 Z"/><path d="M0,18 L18,0 L62,0 L80,18 L80,82 L62,100 L18,100 L0,82 Z M22,26 L22,74 L28,80 L52,80 L58,74 L58,26 L52,20 L28,20 Z" transform="translate(92 0)"/><path d="M0,100 L26,0 L54,0 L80,100 L57,100 L51,75 L29,75 L23,100 Z M35,55 L45,55 L40,30 Z" transform="translate(184 0)"/><path d="M0,18 L18,0 L65,0 L80,15 L65,33 L55,22 L28,22 L22,28 L22,72 L28,78 L55,78 L65,67 L80,85 L65,100 L18,100 L0,82 Z" transform="translate(276 0)"/><path d="M0,0 L23,0 L23,38 L57,38 L57,0 L80,0 L80,100 L57,100 L57,61 L23,61 L23,100 L0,100 Z" transform="translate(368 0)"/></g>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="announce" role="region" aria-label="Announcement">
+    <p><span class="announce-dot" aria-hidden="true"></span>Sample drop preview. Nothing ships. Try code <strong>SIDELINE10</strong> in the bag for 10% off.</p>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="MOACH, back to top">
+        <svg class="brand-logo" aria-hidden="true" focusable="false"><use href="#sym-logo"></use></svg>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="nav-toggle-label">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#shop">Shop the drop</a></li>
+          <li><a href="#story">What's a MOACH</a></li>
+          <li><a href="#slogans">Slogans</a></li>
+          <li><a href="#stickers">Decals</a></li>
+          <li><a href="#roster">Roster</a></li>
+        </ul>
+      </nav>
+
+      <button class="bag-button" type="button" data-open-cart aria-haspopup="dialog" aria-label="Open bag, 0 items">
+        <span>Bag</span>
+        <span class="bag-count" data-cart-count>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="hero-rail" aria-hidden="true">Mom + Coach &nbsp;/&nbsp; Every sport, every season</p>
+      <div class="hero-copy">
+        <p class="kicker"><span class="kicker-tag">Drop 01</span> The Sideline Collection</p>
+        <h1 id="hero-title" class="hero-title">
+          <span>Coaching</span>
+          <span>from the</span>
+          <span><mark>sideline</mark><span class="period">.</span></span>
+        </h1>
+        <p class="hero-lede">Game-day pieces for the mom who remembers the water, sees every play and always has notes. Field, court, diamond, gym or meet: every season, every sideline.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#shop">Shop the drop</a>
+          <a class="btn btn-quiet" href="#story">What's a MOACH? <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <figure class="hero-art">
+        <img src="assets/photoreal/hero-photo-collage.jpg" width="1800" height="1000"
+             alt="Photographed MOACH game-day collection: a black hoodie, rose crewneck, black crop tee and black cap with the MOACH identity applied.">
+        <figcaption><span>On the board:</span> Sideline Hoodie, Sideline Crew, Main-Character Crop and Sideline Cap.</figcaption>
+      </figure>
+    </section>
+
+    <!-- LINEUP (category jump links) -->
+    <nav class="lineup" aria-label="Shop by category">
+      <p class="lineup-label">The lineup</p>
+      <ul>
+        <li><a href="#shop" data-filter-link="hat"><span class="num">01</span> Hats &amp; visors</a></li>
+        <li><a href="#shop" data-filter-link="tank"><span class="num">02</span> Tanks</a></li>
+        <li><a href="#shop" data-filter-link="crop"><span class="num">03</span> Crop tops</a></li>
+        <li><a href="#shop" data-filter-link="hoodie"><span class="num">04</span> Hoodies</a></li>
+        <li><a href="#shop" data-filter-link="crewneck"><span class="num">05</span> Sweatshirts</a></li>
+        <li><a href="#shop" data-filter-link="sticker"><span class="num">06</span> Stickers</a></li>
+        <li><a href="#shop" data-filter-link="gear"><span class="num">07</span> Game-day gear</a></li>
+      </ul>
+    </nav>
+
+    <!-- STORY -->
+    <section class="story" id="story" aria-labelledby="story-title">
+      <div class="story-inner">
+        <div class="story-entry">
+          <p class="eyebrow eyebrow-on-dark">Brand story</p>
+          <h2 id="story-title" class="story-word">MO<span class="story-dot" aria-hidden="true">&middot;</span>ACH</h2>
+          <p class="story-pron"><span class="visually-hidden">Pronounced </span>/mōch/ &nbsp;<em>noun</em> &nbsp;Mom + Coach.</p>
+          <p class="story-def">The mom coaching from the sideline: cheering, organizing and keeping the team together while dad or another coach runs the field, the court or the dugout.</p>
+          <p class="story-body">MOACH is for her, and for every sports parent in the stands. Game-day clothes as sharp as her halftime adjustments, from the first practice to the last meet of the season.</p>
+          <ol class="playbook" aria-label="What a MOACH does">
+            <li><span class="num">01</span> Remembers the water.</li>
+            <li><span class="num">02</span> Sees every play.</li>
+            <li><span class="num">03</span> Rallies the family.</li>
+            <li><span class="num">04</span> Always has notes.</li>
+          </ol>
+          <svg class="story-emblem" aria-hidden="true" focusable="false"><use href="#sym-emblem"></use></svg>
+        </div>
+
+        <div class="story-play">
+          <div class="pb">
+            <div class="pb-head">
+              <h3 class="pb-label" id="pb-label">Youth Sports Playbook</h3>
+              <p class="pb-sub">One collection for every youth-sports sideline.</p>
+            </div>
+            <div class="pb-tabs" role="tablist" aria-labelledby="pb-label">
+              <button type="button" class="pb-tab" role="tab" id="tab-football" data-sport-tab="football" aria-controls="sport-panel" aria-selected="true"><span class="num" aria-hidden="true">01</span> Football <span class="pb-tab-sub">5-on-5</span></button>
+              <button type="button" class="pb-tab" role="tab" id="tab-basketball" data-sport-tab="basketball" aria-controls="sport-panel" aria-selected="false" tabindex="-1"><span class="num" aria-hidden="true">02</span> Basketball</button>
+              <button type="button" class="pb-tab" role="tab" id="tab-baseball" data-sport-tab="baseball" aria-controls="sport-panel" aria-selected="false" tabindex="-1"><span class="num" aria-hidden="true">03</span> Baseball</button>
+              <button type="button" class="pb-tab" role="tab" id="tab-volleyball" data-sport-tab="volleyball" aria-controls="sport-panel" aria-selected="false" tabindex="-1"><span class="num" aria-hidden="true">04</span> Volleyball</button>
+            </div>
+            <div class="pb-panel" role="tabpanel" id="sport-panel" aria-labelledby="tab-football" tabindex="0" data-sport-panel data-sport="football">
+              <figure class="pb-figure">
+                <img data-sport-img src="assets/sports/football-5v5.svg" width="900" height="620"
+                     alt="5-on-5 youth football play: five coral offensive players on the dashed line of scrimmage, five cream defenders marked X, and chartreuse passing routes breaking downfield.">
+              </figure>
+              <div class="pb-caption">
+                <p class="pb-venue" data-sport-venue>On the field</p>
+                <h4 class="pb-title" data-sport-title>5-on-5 football</h4>
+                <p class="pb-line" data-sport-line>Five routes off one snap. She saw the open receiver before the coach did.</p>
+              </div>
+              <p class="pb-key" aria-hidden="true"><span class="key-dot"></span>Players <span class="key-dash"></span>Ball <span class="key-run"></span>Run</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP -->
+    <section class="shop" id="shop" aria-labelledby="shop-title">
+      <div class="shop-head">
+        <div>
+          <p class="eyebrow">Drop 01 &middot; sample collection</p>
+          <h2 id="shop-title" class="section-title">The drop</h2>
+        </div>
+        <p class="shop-note">Nineteen sample pieces across apparel, headwear, drinkware and game-day carry gear. Tap a color to see it on the piece. <em>Prices are placeholders for approval.</em></p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter products by category">
+        <button type="button" class="filter" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter" data-filter="hat" aria-pressed="false">Hats &amp; visors</button>
+        <button type="button" class="filter" data-filter="tank" aria-pressed="false">Tanks</button>
+        <button type="button" class="filter" data-filter="crop" aria-pressed="false">Crop tops</button>
+        <button type="button" class="filter" data-filter="hoodie" aria-pressed="false">Hoodies</button>
+        <button type="button" class="filter" data-filter="crewneck" aria-pressed="false">Sweatshirts</button>
+        <button type="button" class="filter" data-filter="sticker" aria-pressed="false">Stickers</button>
+        <button type="button" class="filter" data-filter="gear" aria-pressed="false">Game-day gear</button>
+      </div>
+      <p class="filter-status" role="status" aria-live="polite" data-filter-status>Showing all 19 pieces</p>
+      <p class="visually-hidden" role="status" aria-live="polite" data-swatch-live></p>
+
+      <ul class="product-grid" data-product-grid aria-label="Products"></ul>
+      <noscript><p class="noscript">The sample product grid, bag and quick view need JavaScript turned on.</p></noscript>
+    </section>
+
+    <!-- SLOGANS -->
+    <section class="slogans" id="slogans" aria-labelledby="slogans-title">
+      <div class="slogans-head">
+        <p class="eyebrow">The slogan collection</p>
+        <h2 id="slogans-title" class="section-title">Say it from<br>the sideline.</h2>
+        <p class="slogans-note">Five lines, printed big on the back. The front stays clean with the MOACH mark.</p>
+      </div>
+      <ol class="slogan-list">
+        <li class="slogan">
+          <img src="assets/photoreal/products/product-tank-ink.png" alt="" width="1200" height="1400" loading="lazy">
+          <p class="slogan-line">I&rsquo;m not yelling. I&rsquo;m coaching.</p>
+          <button type="button" class="btn btn-line" data-quickview="not-yelling-tank">Shop the tank <span class="visually-hidden">with “I’m not yelling. I’m coaching.”</span></button>
+        </li>
+        <li class="slogan slogan-alt">
+          <img src="assets/photoreal/products/product-hoodie-sand.png" alt="" width="1200" height="1400" loading="lazy">
+          <p class="slogan-line">Ask your coach. Then ask the MOACH.</p>
+          <button type="button" class="btn btn-line" data-quickview="ask-the-moach-hoodie">Shop the hoodie <span class="visually-hidden">with “Ask your coach. Then ask the MOACH.”</span></button>
+        </li>
+        <li class="slogan">
+          <img src="assets/photoreal/products/product-crop-cream.png" alt="" width="1200" height="1400" loading="lazy">
+          <p class="slogan-line">Sideline strategy. Main&#8209;character energy.</p>
+          <button type="button" class="btn btn-line" data-quickview="main-character-crop">Shop the crop <span class="visually-hidden">with “Sideline strategy. Main-character energy.”</span></button>
+        </li>
+        <li class="slogan slogan-alt">
+          <img src="assets/photoreal/products/product-crop-sand.png" alt="" width="1200" height="1400" loading="lazy">
+          <p class="slogan-line">The real MVP is on the sideline.</p>
+          <button type="button" class="btn btn-line" data-quickview="mvp-crop">Shop the crop <span class="visually-hidden">with “The real MVP is on the sideline.”</span></button>
+        </li>
+        <li class="slogan">
+          <img src="assets/photoreal/products/product-crewneck-cream.png" alt="" width="1200" height="1400" loading="lazy">
+          <p class="slogan-line">Fueled by coffee &amp; game-day chaos.</p>
+          <button type="button" class="btn btn-line" data-quickview="coffee-chaos-crew">Shop the crew <span class="visually-hidden">with “Fueled by coffee and game-day chaos.”</span></button>
+        </li>
+      </ol>
+    </section>
+
+    <!-- STICKERS -->
+    <section class="decal" id="stickers" aria-labelledby="decal-title">
+      <div class="decal-inner">
+        <div class="decal-art">
+          <figure class="decal-print">
+            <img src="assets/photoreal/products/product-sticker-coral.png" width="1200" height="1400" loading="lazy"
+                 alt="Coral MOACH vinyl window decal photographed on a car window.">
+          </figure>
+          <figure class="decal-window">
+            <img src="assets/photoreal/products/product-sticker-cream.png" width="1200" height="1400" loading="lazy"
+                 alt="Cream MOACH vinyl window decal photographed on auto glass.">
+            <figcaption>One-color vinyl, photographed in cream on auto glass.</figcaption>
+          </figure>
+        </div>
+        <div class="decal-copy">
+          <p class="eyebrow eyebrow-on-coral">Car decals &amp; stickers</p>
+          <h2 id="decal-title" class="decal-title">Every parking lot is a sideline.</h2>
+          <p>Rep the team in the pickup line. The MOACH decal goes on the rear window, the cooler, the water bottle and the clipboard you swear isn&rsquo;t yours.</p>
+          <p class="decal-price"><span>Car decal</span> <strong>$8</strong> <span class="decal-sizes">4 in or 6 in</span></p>
+          <div class="decal-actions">
+            <button type="button" class="btn btn-ink" data-quickview="car-decal">Choose a decal size</button>
+            <a class="btn btn-quiet btn-quiet-ink" href="#shop" data-filter-link="sticker">See all stickers <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNUP -->
+    <section class="roster" id="roster" aria-labelledby="roster-title">
+      <div class="roster-inner">
+        <div class="roster-copy">
+          <p class="eyebrow">Raise athletes. Raise the volume.</p>
+          <h2 id="roster-title" class="section-title">Get on the roster.</h2>
+          <p>First look at Drop 02, restocks and the occasional pep talk between quarters, innings and sets. In this sample, your email stays on this page.</p>
+        </div>
+        <form class="roster-form" data-signup novalidate>
+          <label for="signup-email">Email address</label>
+          <div class="roster-field">
+            <input id="signup-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required aria-describedby="signup-msg">
+            <button class="btn btn-primary" type="submit">Join the roster</button>
+          </div>
+          <p class="form-msg" id="signup-msg" role="status" aria-live="polite" data-signup-msg></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <svg class="footer-logo" role="img" aria-label="MOACH" focusable="false"><use href="#sym-logo"></use></svg>
+      <div class="footer-cols">
+        <nav aria-label="Footer shop links">
+          <h2 class="footer-head">Shop</h2>
+          <ul>
+            <li><a href="#shop" data-filter-link="hat">Hats &amp; visors</a></li>
+            <li><a href="#shop" data-filter-link="tank">Tanks</a></li>
+            <li><a href="#shop" data-filter-link="crop">Crop tops</a></li>
+            <li><a href="#shop" data-filter-link="hoodie">Hoodies</a></li>
+            <li><a href="#shop" data-filter-link="crewneck">Sweatshirts</a></li>
+            <li><a href="#shop" data-filter-link="sticker">Stickers</a></li>
+            <li><a href="#shop" data-filter-link="gear">Game-day gear</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Footer brand links">
+          <h2 class="footer-head">MOACH</h2>
+          <ul>
+            <li><a href="#story">What's a MOACH</a></li>
+            <li><a href="#slogans">Slogan collection</a></li>
+            <li><a href="#stickers">Car decals</a></li>
+            <li><a href="#roster">Get on the roster</a></li>
+            <li><a href="#top">Back to top</a></li>
+          </ul>
+        </nav>
+        <div class="footer-note">
+          <h2 class="footer-head">About this sample</h2>
+          <p>MOACH is a prototype storefront for approval. Products, prices, sizes, inventory and checkout are sample content. No orders are taken, nothing is charged or shipped, and nothing you type leaves your browser. Your bag is saved only in this browser&rsquo;s local storage.</p>
+        </div>
+      </div>
+      <p class="footer-base">&copy; 2026 MOACH sample brand. Original artwork; no team, league or school marks.</p>
+    </div>
+  </footer>
+
+  <!-- QUICK VIEW -->
+  <dialog class="quickview" id="quickview" aria-labelledby="qv-title" aria-describedby="qv-desc">
+    <div class="qv-inner">
+      <button type="button" class="icon-btn qv-close" data-close-dialog aria-label="Close quick view">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>
+      </button>
+      <div class="qv-media" data-qv-media>
+        <img data-qv-img src="assets/photoreal/products/product-hat-ink.png" alt="" width="1200" height="1400">
+        <p class="qv-print" data-qv-print hidden></p>
+      </div>
+      <form class="qv-body" data-qv-form>
+        <p class="eyebrow" data-qv-cat>Category</p>
+        <h2 id="qv-title" class="qv-title" data-qv-name>Product</h2>
+        <p class="qv-price" data-qv-price>$0</p>
+        <p class="qv-desc" id="qv-desc" data-qv-desc></p>
+
+        <fieldset class="opt">
+          <legend>Color: <span data-qv-color-name></span></legend>
+          <div class="swatch-options" data-qv-colors></div>
+        </fieldset>
+
+        <fieldset class="opt">
+          <legend>Size: <span data-qv-size-name></span></legend>
+          <div class="size-options" data-qv-sizes></div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary btn-block">Add to bag <span aria-hidden="true">&middot;</span> <span data-qv-btn-price></span></button>
+        <p class="qv-fine">Sample product. The art switches to the color you pick; no real inventory or shipping.</p>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- CART DRAWER -->
+  <dialog class="drawer" id="cart" aria-labelledby="cart-title">
+    <div class="drawer-inner">
+      <div class="drawer-head">
+        <h2 id="cart-title" class="drawer-title">Your bag <span class="drawer-count" data-cart-count-text>(0)</span></h2>
+        <button type="button" class="icon-btn" data-close-dialog aria-label="Close bag">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.5" fill="none"/></svg>
+        </button>
+      </div>
+      <p class="sample-banner"><strong>Sample store.</strong> This bag is a demo. Nothing will be charged, reserved or shipped.</p>
+      <p class="visually-hidden" role="status" aria-live="polite" data-cart-live></p>
+
+      <div class="drawer-body">
+        <ul class="cart-list" data-cart-list aria-label="Items in your bag"></ul>
+        <div class="cart-empty" data-cart-empty>
+          <p class="cart-empty-title">Your bag is empty.</p>
+          <p>The bench is warm, though.</p>
+          <a class="btn btn-primary" href="#shop" data-close-cart-link>Browse the drop</a>
+        </div>
+      </div>
+
+      <div class="drawer-foot" data-cart-foot>
+        <form class="promo" data-promo-form>
+          <label for="promo-code">Promo code</label>
+          <div class="promo-field">
+            <input id="promo-code" name="promo" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Try SIDELINE10" aria-describedby="promo-msg">
+            <button type="submit" class="btn btn-ink">Apply</button>
+          </div>
+          <p class="form-msg" id="promo-msg" data-promo-msg role="status" aria-live="polite"></p>
+        </form>
+        <dl class="totals">
+          <div><dt>Subtotal</dt><dd data-subtotal>$0.00</dd></div>
+          <div class="totals-discount" data-discount-row hidden>
+            <dt>SIDELINE10 <span class="muted">(10% off)</span> <button type="button" class="text-btn" data-remove-promo>Remove<span class="visually-hidden"> promo code</span></button></dt>
+            <dd data-discount>&minus;$0.00</dd>
+          </div>
+          <div class="totals-total"><dt>Estimated total</dt><dd data-total>$0.00</dd></div>
+        </dl>
+        <button type="button" class="btn btn-primary btn-block" data-checkout>Checkout (sample only)</button>
+        <p class="form-msg" data-checkout-msg role="status" aria-live="polite"></p>
+        <p class="drawer-fine">Prototype pricing. Taxes and shipping are not calculated.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

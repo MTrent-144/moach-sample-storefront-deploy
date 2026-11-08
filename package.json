@@ -1,0 +1,12 @@
+{
+  "name": "moach-sample-storefront",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MOACH sample storefront for concept review",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
