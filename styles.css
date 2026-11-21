@@ -527,7 +527,8 @@ button { cursor: pointer; }
 }
 .pb-sub { font-family: var(--f-serif); font-style: italic; font-size: 1rem; color: #D9D4C5; }
 
-.pb-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+/* Ten sports: five across, two rows. Every tab keeps its own bottom rule, so the rows divide cleanly. */
+.pb-tabs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .pb-tab {
   position: relative;
   display: flex;
@@ -544,13 +545,14 @@ button { cursor: pointer; }
   font-family: var(--f-display);
   font-stretch: condensed;
   font-weight: 700;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  letter-spacing: .04em;
+  font-size: clamp(.95rem, 1.2vw, 1.1rem);
+  letter-spacing: .03em;
+  overflow-wrap: anywhere; /* long names break at the soft hyphens in the HTML */
   line-height: 1;
   text-align: left;
   text-transform: uppercase;
 }
-.pb-tab + .pb-tab { border-left: 2px solid rgba(244, 239, 223, .3); }
+.pb-tab:not(:nth-child(5n + 1)) { border-left: 2px solid rgba(244, 239, 223, .3); }
 .pb-tab .num { font-size: .72em; color: var(--coral); letter-spacing: .08em; }
 .pb-tab-sub { font-size: .72em; font-weight: 600; letter-spacing: .1em; color: var(--lime); }
 .pb-tab:hover { color: var(--cream); background: var(--ink-2); }
@@ -1375,7 +1377,7 @@ body.has-dialog { overflow: hidden; }
   .pb-head { padding-inline: .9rem; }
   .pb-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pb-tab { min-height: 60px; flex-direction: row; flex-wrap: wrap; align-items: baseline; justify-content: flex-start; gap: .1rem .4rem; padding: .7rem .8rem; }
-  .pb-tab + .pb-tab { border-left: 0; }
+  .pb-tab:not(:nth-child(5n + 1)) { border-left: 0; }
   .pb-tab:nth-child(even) { border-left: 2px solid rgba(244, 239, 223, .3); }
   .pb-panel { padding-inline: .9rem; }
   .pb-caption { grid-template-columns: 1fr; }

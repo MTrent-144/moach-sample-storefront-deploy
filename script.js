@@ -57,9 +57,9 @@
     {
       id: 'ask-the-moach-hoodie', name: 'Ask The MOACH Hoodie', category: 'hoodie', price: 7200,
       tone: 'pattern',
-      print: 'Ask Your Coach. Then Ask The MOACH.',
+      print: 'Ask The MOACH. She’s The Coach.',
       colors: [C.ink, C.sand, C.cream], sizes: APPAREL,
-      desc: 'Pullover hood, kangaroo pocket and a chain of command printed on the back. For anyone who needs reminding.',
+      desc: 'Pullover hood, kangaroo pocket and a clear reminder printed on the back: the MOACH is the coach.',
     },
     {
       id: 'game-day-tank', name: 'Game Day Racerback', category: 'tank', price: 3600,
@@ -653,7 +653,7 @@
   });
 
   /* ---------- Youth Sports Playbook (tabs) ----------
-     Football 5-on-5 is the default and is already in the HTML, so the panel
+     Ten sports. Football 5-on-5 is the default and is already in the HTML, so the panel
      reads correctly before (or without) this script. */
 
   const SPORTS = {
@@ -661,29 +661,71 @@
       img: 'assets/sports/football-5v5.svg',
       venue: 'On the field',
       title: '5-on-5 football',
-      line: 'Five routes off one snap. She saw the open receiver before the coach did.',
+      line: 'Five routes off one snap. She drew it up and saw the open receiver first.',
       alt: '5-on-5 youth football play: five coral offensive players on the dashed line of scrimmage, five cream defenders marked X, and chartreuse passing routes breaking downfield.',
     },
     basketball: {
       img: 'assets/sports/basketball.svg',
       venue: 'On the court',
       title: 'Basketball, half court',
-      line: 'Pass, cut, screen. She called the backdoor from row three.',
+      line: 'Pass, cut, screen. She called the backdoor from the bench.',
       alt: 'Youth basketball half-court set: five coral players around the key, dashed chartreuse passes, solid cuts to the basket and a screen beside the lane.',
     },
     baseball: {
       img: 'assets/sports/baseball.svg',
       venue: 'On the diamond',
       title: 'Baseball, rounding first',
-      line: 'Eyes up, take the turn. She was waving him on before the base coach was.',
+      line: 'Eyes up, take the turn. She was waving the runner on from the coaching box.',
       alt: 'Youth baseball diamond: coral fielders around the bases, a chartreuse runner rounding first toward second, the coaching box and the dugout on the right.',
     },
     volleyball: {
       img: 'assets/sports/volleyball.svg',
       venue: 'In the gym',
       title: 'Volleyball, serve receive',
-      line: 'Six on the floor, one ball in the air, and one voice in the bleachers calling it first.',
+      line: 'Six on the floor, one ball in the air, and one voice on the sideline calling it first.',
       alt: 'Youth volleyball serve receive: six coral players in two rows behind the net, a dashed chartreuse serve arcing over, and short arrows for each player’s adjustment.',
+    },
+    cheerleading: {
+      img: 'assets/sports/cheerleading.svg',
+      venue: 'On the mat',
+      title: 'Cheer, stunts up',
+      line: 'Three stunts on one eight-count. She counted it in and the front line hit its V.',
+      alt: 'Youth cheer formation on a top-down mat: three stunt groups across the middle, each with two coral bases, a coral back spot and a ringed chartreuse flyer, and four coral front-line cheerleaders with chartreuse arrows shifting them into a V.',
+    },
+    hockey: {
+      img: 'assets/sports/hockey.svg',
+      venue: 'On the ice',
+      title: 'Hockey, point shot',
+      line: 'Wall to point, shot through traffic. She sent a skater to the net front before the puck moved.',
+      alt: 'Youth hockey attacking zone: five coral skaters, a dashed chartreuse pass from the half-wall to the point and a shot toward the goal, with solid arrows for one skater screening at the net front and another sliding to the far post.',
+    },
+    dance: {
+      img: 'assets/sports/dance.svg',
+      venue: 'On the stage',
+      title: 'Dance, opening the wedge',
+      line: 'Soloist down center, back line opens on the five. She set the spacing and counted them in from the wings.',
+      alt: 'Youth dance formation on a top-down stage with the audience at the bottom: six coral dancers and a chartreuse soloist, with arrows sending the soloist downstage to center while the back line opens into a wedge. Spike marks run across the front of the stage.',
+    },
+    swimming: {
+      img: 'assets/sports/swimming.svg',
+      venue: 'In the pool',
+      title: 'Swimming, relay turn',
+      line: 'Clean wall, quick flip, next swimmer on the block. She had the splits before the clock did.',
+      alt: 'Youth swim relay in a top-down six-lane pool: five coral swimmers racing toward the far wall, the chartreuse leader in lane three reaching it first with a dashed flip-turn arrow, and the next relay swimmer waiting on the lane-three block.',
+    },
+    tennis: {
+      img: 'assets/sports/tennis.svg',
+      venue: 'On the court',
+      title: 'Tennis doubles, the poach',
+      line: 'Serve wide, partner crosses. She called the poach before the return left the racket.',
+      alt: 'Youth tennis doubles court seen from above: the coral server behind the baseline and coral partner at the net, two cream-X opponents, a dashed crosscourt serve and return, and a solid arrow for the net player crossing to poach.',
+    },
+    lacrosse: {
+      img: 'assets/sports/lacrosse.svg',
+      venue: 'On the field',
+      title: 'Lacrosse, feed from X',
+      line: 'Ball behind the cage, cutter to the crease. She drew up the feed and the wings filled on cue.',
+      alt: 'Youth lacrosse offensive end: six coral attackers, the ball carrier behind the goal feeding a dashed chartreuse pass around the goal circle to a cutter sliding into the crease, while the two wing players step in.',
     },
   };
 

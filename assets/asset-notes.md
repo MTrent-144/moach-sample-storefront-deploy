@@ -1,4 +1,4 @@
-﻿# MOACH asset notes
+# MOACH asset notes
 
 ## Identity and palette
 The three original standalone identity SVGs and pattern are unchanged. New applied marks reuse their exact path geometry. No team, school, college, league or equipment-brand marks are used.
@@ -28,11 +28,13 @@ All are self-contained accessible 900 × 620 SVGs in `sports/`:
 - `basketball.svg`: five players, half court, basket, key, arcs, passes, cuts and screen bar.
 - `baseball.svg`: diamond, bases, foul lines, fielders, runner rounding first toward second, coaching box and dugout.
 - `volleyball.svg`: six receivers, net, attack lines, serve trajectory and receive adjustments.
+- `cheerleading.svg`: top-down mat with nine panel seams; three stunt groups (two coral bases, coral back spot, chartreuse flyer in a cream ring); four front-line cheerleaders shifting into a V. No ball or toss.
+- `hockey.svg`: attacking zone with rounded end boards, goal line, crease, goal, two faceoff circles, blue line, neutral-zone dots and dashed center line; five coral skaters, puck, pass to the point, shot, net-front drive and far-post slide.
 
-Shared ink ground, cream court/field lines, coral players, chartreuse routes/ball accents and original MOACH sideline marker. Dashed chartreuse arrows show ball movement; solid arrows show player movement. Useful titles and descriptions identify symbols without visible text or fonts. These are youth editorial concepts, not rulebook specifications for a particular age group.
+Shared ink ground, cream court/field/rink/mat lines, coral players, chartreuse routes/ball/puck/flyer accents and original MOACH sideline marker. Dashed chartreuse arrows show ball or puck movement; solid arrows show player movement. Useful titles and descriptions identify symbols without visible text or fonts. These are youth editorial concepts, not rulebook specifications for a particular age group.
 
 ## Regeneration
-Run `python assets/build_studio_assets.py` with Python 3 from any directory. This dependency-free source reads the unchanged standalone marks and regenerates all 24 variants, six defaults, hero and four sports diagrams, then recursively XML-parses all SVGs.
+Run `python assets/build_studio_assets.py` with Python 3 from any directory. This dependency-free source reads the unchanged standalone marks and regenerates all 24 variants, six defaults, hero and ten sports diagrams, then recursively XML-parses all SVGs.
 
 `build_assets.py` remains the ORIGINAL FIRST-GENERATION source only. It does not regenerate the upgraded set; running it overwrites legacy defaults and hero with old artwork. Use `build_studio_assets.py` for current products and sports.
 
@@ -42,6 +44,8 @@ These are sophisticated vector studio simulations, not camera photographs, garme
 Use standalone flat identity artwork for production, never shaded mockups. Expand script strokes for vendors. Approve actual placement, ink/thread swatches and physical embroidery sew-outs. Vendors must establish minimum gaps, stitch density, underlay and print sizing. Vinyl contour, bleed, carrier and cut paths require printer preparation; the peel is styling only. Front views do not illustrate the storefront slogan backs.
 
 ## Verification
-All 39 SVGs recursively XML parsed. Validation checks titles, local reference resolution, unique IDs, accessible label references, dimensions, variant names, byte-equal defaults and football/basketball/volleyball player counts. No images, scripts, foreignObjects, external resources, text or font elements. The SVG namespace URI is metadata, not a fetched resource.
+All 45 SVGs recursively XML parsed. Validation checks titles, local reference resolution, unique IDs, accessible label references, dimensions, variant names, byte-equal defaults and sport player/formation counts. No images, scripts, foreignObjects, external resources, text or font elements. The SVG namespace URI is metadata, not a fetched resource.
 
-Headless Chrome rendered representative ink/cream hats, coral tank, cream crop, ink hoodie, sand crewneck, lime decal, hero and all four sports into a contact sheet for visual inspection. Contrast, framing, distinct sports and SVG effects were checked; fold edges were softened and the final set re-rendered.
+Headless Chrome rendered representative ink/cream hats, coral tank, cream crop, ink hoodie, sand crewneck, lime decal, hero and the original four sports into a contact sheet for visual inspection. Contrast, framing, distinct sports and SVG effects were checked; fold edges were softened and the final set re-rendered.
+
+Cheerleading and hockey were added later through the same `sport()` helper, then dance, swimming, tennis and lacrosse (2026-11-21); each round left every earlier SVG byte-identical, all 45 SVGs XML-parse, and the new diagrams were rendered in headless Chrome and visually checked.

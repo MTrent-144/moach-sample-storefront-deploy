@@ -181,8 +181,79 @@ for x,y in [(235,362),(425,362),(625,362),(235,466),(425,466),(625,466)]:b+=circ
 b+=route('M235 443L289 402')+route('M625 443L564 402')+route('M425 442V400')+route('M555 148Q488 189 434 281',True)
 b+=circle(555,148,11,LIME)+lines('M547 142Q557 146 559 158M548 152Q555 147 563 146')
 sport('volleyball','Youth volleyball: six-player serve receive',b,'Six coral players occupy two rows on the receiving half. Court center net and attack lines in cream. Chartreuse ball and dashed serve trajectory approach the receivers; solid arrows show receive adjustments. MOACH marker outside right sideline.')
+# Cheer: top-down mat, front edge at the bottom. Nine panel seams; three stunt groups
+# (two bases and a back spot in coral, flyer in chartreuse inside a cream "up" ring);
+# four front-line cheerleaders shift into a V pointing at the front. No ball or toss.
+b=lines('M125 88H719V550H125Z')
+for x in range(191,719,66):b+=path(f'M{x} 88V550',stroke=CREAM,width=1.5,extra='stroke-dasharray="2 9" opacity=".45"')
+b+=lines('M422 550V532M422 88V106')
+for cx in [260,422,584]:
+    b+=circle(cx,250,22,INK,extra='stroke="#F4EFDF" stroke-width="2"')
+    b+=circle(cx,206,13,extra='data-role="back-spot"')
+    for dx in [-31,31]:b+=circle(cx+dx,280,13,extra='data-role="base"')
+    b+=circle(cx,250,11,LIME,extra='data-role="flyer"')
+for x in [245,355,489,599]:b+=circle(x,440,13,extra='data-role="front-line"')
+b+=route('M232 429L188 392')+route('M612 429L656 392')+route('M361 457L384 503')+route('M483 457L460 503')
+sport('cheerleading','Youth cheerleading: three stunt groups and a front-line V',b,'Top-down cheer mat with nine panel seams and the front edge at the bottom. Across the middle are three stunt groups, each with two coral bases, a coral back spot and a chartreuse flyer inside a cream ring that marks her up in the stunt. Four coral cheerleaders stand on the front line; solid chartreuse arrows move the outside pair back and the inside pair forward into a V pointing at the crowd. MOACH marker on the right sideline.')
+# Hockey: attacking zone, end boards at left. Rounded corners, goal line, crease and net,
+# two zone faceoff circles, heavy blue line, neutral-zone dots, dashed center line.
+b=lines('M735 90H246A151 151 0 0 0 95 241V399A151 151 0 0 0 246 550H735')
+b+=path('M155 121V519',stroke=CREAM,width=2)
+b+=path('M155 288A32 32 0 0 1 155 352Z',CREAM,extra='opacity=".1"')+lines('M155 288A32 32 0 0 1 155 352')
+b+=lines('M155 304H140Q133 304 133 311V329Q133 336 140 336H155')
+for y in [201,439]:
+    b+='<circle cx="263" cy="'+str(y)+'" r="81" fill="none" stroke="#F4EFDF" stroke-width="2.5"/>'+circle(263,y,6,CREAM)+circle(528,y,5,CREAM)
+b+=path('M501 90V550',stroke=CREAM,width=6)
+b+=path('M636 90V550',stroke=CREAM,width=2,extra='stroke-dasharray="9 7"')
+b+='<circle cx="636" cy="320" r="81" fill="none" stroke="#F4EFDF" stroke-width="2.5"/>'+circle(636,320,6,CREAM)
+for x,y in [(300,500),(470,450),(470,190),(335,292),(306,152)]:b+=circle(x,y,16,extra='data-role="skater"')
+b+=circle(324,486,7,LIME)+route('M330 482Q400 462 446 452',True)+route('M450 438L196 332',True)
+b+=route('M316 296Q260 302 214 314')+route('M292 166Q228 214 199 276')
+sport('hockey','Youth hockey: point shot with a net-front screen',b,'Attacking zone of a rink with rounded end boards at left, the goal line, crease and goal, two faceoff circles, a heavy cream blue line, neutral-zone dots and the dashed center line with part of the center circle at right. Five coral skaters. Dashed chartreuse arrows are puck movement: a pass from the half-wall up to the point, then a shot toward the goal. Solid arrows show one skater driving to the front of the net and another sliding to the far post. Small chartreuse disc is the puck. MOACH marker on the right side.')
+# Dance: top-down stage, audience at the bottom. Curved apron, wing legs on both sides,
+# spike marks across the downstage line. Six coral dancers; the chartreuse soloist travels
+# downstage to center while the back line opens into a wedge.
+b=lines('M125 110H719V478Q422 540 125 478Z')
+for y in [185,265,345]:b+=lines(f'M125 {y}H163M719 {y}H681')
+for x in range(185,700,79):b+=path(f'M{x} 449V461',stroke=CREAM,width=2)
+b+=path('M422 443V467',stroke=CREAM,width=3)
+for x,y in [(230,205),(340,205),(504,205),(614,205),(300,320),(544,320)]:b+=circle(x,y,15,extra='data-role="dancer"')
+b+=circle(422,255,15,LIME,extra='data-role="soloist"')
+b+=route('M422 278V398')+route('M222 226L198 286')+route('M622 226L646 286')+route('M314 336L354 366')+route('M530 336L490 366')
+sport('dance','Youth dance: a soloist travels downstage as the line opens into a wedge',b,'Top-down stage with the audience at the bottom: a curved apron, wing legs on both sides and cream spike marks across the downstage line, with a larger mark at center. Six coral dancers stand in a back line of four and a middle pair. Solid chartreuse arrows move the chartreuse soloist straight downstage to center, slide the outside back-line dancers down and out, and bring the middle pair in, opening the formation into a wedge. MOACH marker on the right side.')
+# Swimming: top-down six-lane pool, starting blocks at left. Dashed lane ropes, dark lane
+# lines with T ends, dashed backstroke-flag lines. Chartreuse leader in lane 3 heads into a
+# flip turn; the next relay swimmer waits on the lane 3 block.
+b=lines('M125 100H719V540H125Z')
+for y in [173,247,320,393,467]:b+=path(f'M125 {y}H719',stroke=CREAM,width=2,extra='stroke-dasharray="4 6"')
+for y in [137,210,283,357,430,503]:
+    b+=path(f'M175 {y}H669M175 {y-10}V{y+10}M669 {y-10}V{y+10}',stroke=CREAM,width=4,extra='opacity=".12"')
+    b+=f'<rect x="103" y="{y-12}" width="22" height="24" rx="3" fill="#F4EFDF"/>'
+for x in [165,679]:b+=path(f'M{x} 100V540',stroke=CREAM,width=1.5,extra='stroke-dasharray="2 8" opacity=".6"')
+for x,y in [(430,137),(470,210),(505,357),(450,430),(395,503)]:
+    b+=circle(x,y,14,extra='data-role="swimmer"')+route(f'M{x+20} {y}H{x+66}')
+b+=circle(600,283,14,LIME,extra='data-role="leader"')+route('M620 283H690')+route('M700 296Q706 322 660 322',True)
+b+=circle(114,283,11,extra='data-role="relay"')
+sport('swimming','Youth swimming: a relay leg heads into the turn',b,'Top-down six-lane pool with starting blocks along the left wall, dashed cream lane ropes, faint lane lines with T ends on the bottom and dotted backstroke-flag lines near each wall. Five coral swimmers race toward the far wall, each with a short solid arrow. The chartreuse leader in lane three reaches the wall first; a dashed arrow curls back for the flip turn. The next relay swimmer waits in coral on the lane-three block. MOACH marker on the right side.')
+# Tennis: top-down doubles court, net vertical at center. Serving team in coral at right;
+# opponents as cream Xs. Dashed serve crosscourt, dashed return, solid poach at the net.
+b=lines('M125 183H719V457H125ZM125 217H719M125 423H719M262 217V423M582 217V423M262 320H582')
+b+=lines('M125 320H137M719 320H707')+path('M422 170V470',stroke=CREAM,width=6)+circle(422,170,5,CREAM)+circle(422,470,5,CREAM)
+for x,y in [(150,248),(300,390)]:b+=path(f'M{x-11} {y-11}l22 22M{x+11} {y-11}l-22 22',stroke=CREAM,width=4,extra='data-role="opponent"')
+b+=circle(735,395,15,extra='data-role="server"')+circle(482,252,15,extra='data-role="net-player"')
+b+=circle(722,382,6,LIME)+route('M712 378L318 262',True)+route('M164 254L432 304',True)+route('M478 272Q470 296 452 314')
+sport('tennis','Youth tennis doubles: serve, return and a poach at the net',b,'Top-down doubles court with the net running vertically through the middle, singles and doubles sidelines, service lines and the center service line. The serving team is coral on the right: the server behind the baseline with the chartreuse ball and the partner at the net. Opponents are cream Xs. A dashed chartreuse arrow carries the serve crosscourt into the service box, a second dashed arrow carries the return back toward the middle, and a solid arrow shows the net player crossing to poach it. MOACH marker on the right side.')
+# Lacrosse: offensive end, end line at left. Goal circle and goal, solid restraining line,
+# dashed midfield line. Six coral attackers; the ball carrier at X behind the goal feeds a
+# cutter sliding to the crease.
+b=lines('M735 90H95V550H735')+lines('M540 90V550')+path('M700 90V550',stroke=CREAM,width=2,extra='stroke-dasharray="9 7"')
+b+=path('M215 280A40 40 0 1 1 215 360A40 40 0 1 1 215 280Z',CREAM,extra='opacity=".08"')+'<circle cx="215" cy="320" r="40" fill="none" stroke="#F4EFDF" stroke-width="2.5"/>'
+b+=lines('M215 306L196 320 215 334Z')+path('M215 306V334',stroke=CREAM,width=4)
+for x,y in [(140,330),(300,170),(300,470),(400,250),(400,400),(470,325)]:b+=circle(x,y,15,extra='data-role="attacker"')
+b+=circle(155,345,7,LIME)+route('M160 352Q225 405 286 334',True)+route('M388 262Q330 290 296 316')+route('M300 190Q330 220 352 238')+route('M300 450Q330 420 352 404')
+sport('lacrosse','Youth lacrosse: feed from behind the goal to a crease cutter',b,'Offensive end of a lacrosse field with the end line at left, the goal circle and goal, a solid restraining line and the dashed midfield line. Six coral attackers. The ball carrier stands behind the goal with the chartreuse ball; a dashed chartreuse arrow feeds the ball around the goal circle to a cutter, whose solid arrow slides into the crease, while the two wing players step in to fill. MOACH marker on the right side.')
 
 if __name__=='__main__':
     files=list(A.rglob('*.svg'))
     for p in files:ET.parse(p)
-    print(f'Generated 24 variants, 6 legacy defaults, hero and 4 sports diagrams; XML parsed {len(files)} SVGs.')
+    print(f'Generated 24 variants, 6 legacy defaults, hero and 10 sports diagrams; XML parsed {len(files)} SVGs.')
